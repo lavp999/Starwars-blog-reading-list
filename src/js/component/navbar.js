@@ -25,9 +25,9 @@ export const Navbar = (props) => {
 								<ul className="dropdown-menu favoritos">
 									{props.lista.map((elemento, index)=>{
 										return(<div key={`div-${elemento.id}`}>
-												<li><a className="dropdown-item" id={`li-${elemento.id}`} href={elemento.id}>{elemento.name}</a></li>
-												<button id={`bt-${elemento.id}`} onClick={()=>borraElemento(index)}><i className="fas fa-trash-alt" /></button>
-												</div>
+												  <li><a className="dropdown-item" id={`li-${elemento.id}`} href={elemento.id}>{elemento.name}</a></li>
+												  <button id={`bt-${elemento.id}`} onClick={()=>borraElemento(index)}><i className="fas fa-trash-alt" /></button>
+											   </div>
 										)
 									})}
 								</ul>
