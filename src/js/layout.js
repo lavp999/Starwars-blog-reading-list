@@ -15,7 +15,7 @@ const Layout = () => {
 	//the basename is used when your project is published in a subdirectory and not in the root of the domain
 	// you can set the basename on the .env file located at the root of this project, E.g: BASENAME=/react-hello-webapp/
 	const basename = process.env.BASENAME || "";
-	const [lista, setLista] = useState([]);
+	const [lista, setLista] = useState([{"name": "Luke Skywalker", "id":1},{"name": "Otto Skywalker", "id":2}]);
 
 	return (
 		<div className="container">
