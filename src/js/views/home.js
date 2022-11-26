@@ -6,7 +6,7 @@ import { Planets } from "../component/planets.js";
 export const Home = (props) => {
 	return (<div className="text-center mt-5">
 				<div>
-					<Characters lista = {props.lista} />
+					<Characters lista = {props.lista} setLista={props.setLista} listaFav={props.listaFav} setListaFav={props.setListaFav} />
 				</div>
 				<div>
 					<Planets />

@@ -13,17 +13,17 @@ import { DetailCharacter } from "./component/detailCharacter";
 //create your first component
 const Layout = () => {
 
-	//the basename is used when your project is published in a subdirectory and not in the root of the domain
-// you can set the basename on the .env file located at the root of this project, E.g: BASENAME=/react-hello-webapp/
-const basename = process.env.BASENAME || "";
-const [listaFav, setListaFav] = useState([{"name": "Luke Skywalker", "id":1},{"name": "Otto Skywalker", "id":2}]);
+	// the basename is used when your project is published in a subdirectory and not in the root of the domain
+	// you can set the basename on the .env file located at the root of this project, E.g: BASENAME=/react-hello-webapp/
+	const basename = process.env.BASENAME || "";
+	const [listaFav, setListaFav] = useState([]);
 
-const [lista, setLista] = useState([{"name": "Luke Skywalker", "id":1, "gender": "Masculino", "hair_color": "azul", "eye_color": "no los abre"},
-									{"name": "Otto Skywalker", "id":2, "gender": "Femenino", "hair_color": "verde", "eye_color": "negro"},
-									{"name": "Otta Skywalker", "id":3, "gender": "Masculino", "hair_color": "rojo", "eye_color": "azul"},
-									{"name": "Otte Skywalker", "id":4, "gender": "Femenino", "hair_color": "negro", "eye_color": "negro"},
-									{"name": "Otti Skywalker", "id":5, "gender": "Femenino", "hair_color": "claro", "eye_color": "verde"},
-   								   ]);
+	const [lista, setLista] = useState([{"name": "Luke Skywalker", "id":1, "gender": "Masculino", "hair_color": "azul", "eye_color": "no los abre"},
+										{"name": "Otto Skywalker", "id":2, "gender": "Femenino", "hair_color": "verde", "eye_color": "negro"},
+										{"name": "Otta Skywalker", "id":3, "gender": "Masculino", "hair_color": "rojo", "eye_color": "azul"},
+										{"name": "Otte Skywalker", "id":4, "gender": "Femenino", "hair_color": "negro", "eye_color": "negro"},
+										{"name": "Otti Skywalker", "id":5, "gender": "Femenino", "hair_color": "claro", "eye_color": "verde"},
+									]);
 
 	return (
 		<div className="container">
