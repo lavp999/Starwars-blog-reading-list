@@ -18,11 +18,11 @@ const Layout = () => {
 const basename = process.env.BASENAME || "";
 const [listaFav, setListaFav] = useState([{"name": "Luke Skywalker", "id":1},{"name": "Otto Skywalker", "id":2}]);
 
-const [lista, setLista] = useState([{"name": "Luke Skywalker", "id":1, "gender": "Masculino", "hair-color": "azul", "eye-color": "no los abre"},
-									{"name": "Otto Skywalker", "id":2, "gender": "Femenino", "hair-color": "verde", "eye-color": "negro"},
-									{"name": "Otta Skywalker", "id":3, "gender": "Masculino", "hair-color": "rojo", "eye-color": "azul"},
-									{"name": "Otte Skywalker", "id":4, "gender": "Femenino", "hair-color": "negro", "eye-color": "negro"},
-									{"name": "Otti Skywalker", "id":5, "gender": "Femenino", "hair-color": "claro", "eye-color": "verde"},
+const [lista, setLista] = useState([{"name": "Luke Skywalker", "id":1, "gender": "Masculino", "hair_color": "azul", "eye_color": "no los abre"},
+									{"name": "Otto Skywalker", "id":2, "gender": "Femenino", "hair_color": "verde", "eye_color": "negro"},
+									{"name": "Otta Skywalker", "id":3, "gender": "Masculino", "hair_color": "rojo", "eye_color": "azul"},
+									{"name": "Otte Skywalker", "id":4, "gender": "Femenino", "hair_color": "negro", "eye_color": "negro"},
+									{"name": "Otti Skywalker", "id":5, "gender": "Femenino", "hair_color": "claro", "eye_color": "verde"},
    								   ]);
 
 	return (
