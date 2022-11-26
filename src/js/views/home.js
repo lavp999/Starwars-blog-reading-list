@@ -1,15 +1,16 @@
 import React from "react";
 import "../../styles/home.css";
-import { Characters } from "../component/characters";
-import { Planets } from "../component/planets";
+import { Characters } from "../component/characters.js";
+import { Planets } from "../component/planets.js";
 
-export const Home = () => (
-	<div className="text-center mt-5">
-		<div>
-			<Characters />
-		</div>
-		<div>
-			<Planets />
-		</div>
-	</div>
-);
+export const Home = (props) => {
+	return (<div className="text-center mt-5">
+				<div>
+					<Characters lista = {props.lista} setLista={props.setLista} listaFav={props.listaFav} setListaFav={props.setListaFav} />
+				</div>
+				<div>
+					<Planets />
+				</div>
+			</div>
+			)
+};
