@@ -29,3 +29,13 @@
     color: rgb(181, 185, 186);
     border: 0px;
 }
+
+.tarjeta{
+    width: 18rem;
+    margin: 10px 10px 10px;
+}
+
+.tarjeta img {
+    max-width: 400px;
+    max-height: 200px;
+}

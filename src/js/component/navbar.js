@@ -6,7 +6,7 @@ export const Navbar = (props) => {
 //	<button id={`bt-${elemento.id}`} onClick={()=>props.setLista(props.lista.filter((e, i) => i != index))}>h</button>
 
 	function borraElemento(id){
-		props.setLista(props.lista.filter((ele, i)=> i != id));
+		props.setListaFav(props.listaFav.filter((ele, i)=> i != id));
 	}
 
 	return (<>
@@ -20,10 +20,10 @@ export const Navbar = (props) => {
 						<ul className="nav nav-pills">
 							<li className="nav-item dropdown active">
 								<a className="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
-									{`Favoritos  (${props.lista.length}) `}
+									{`Favoritos  (${props.listaFav.length}) `}
 								</a>
 								<ul className="dropdown-menu favoritos">
-									{props.lista.map((elemento, index)=>{
+									{props.listaFav.map((elemento, index)=>{
 										return(<div key={`div-${elemento.id}`}>
 												  <li><a className="dropdown-item" id={`li-${elemento.id}`} href={elemento.id}>{elemento.name}</a></li>
 												  <button id={`bt-${elemento.id}`} onClick={()=>borraElemento(index)}><i className="fas fa-trash-alt" /></button>
