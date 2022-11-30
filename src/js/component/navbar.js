@@ -22,13 +22,13 @@ export const Navbar = (props) => {
 								</a>
 								<ul className="dropdown-menu favoritos">
 									{props.listaFav.map((elemento, index)=>{
-											return	(<div key={`div-${elemento.id}`}>
-														<li key={`li-${elemento.id}`} >
-															<Link to={`/singleCharacter/${elemento.id}`} key={`link-${elemento.id}`} className="dropdown-item">
+											return	(<div key={`div-${elemento.uid}`}>
+														<li key={`li-${elemento.uid}`} >
+															<Link to={`/singleCharacter/${elemento.uid}`} key={`link-${elemento.uid}`} className="dropdown-item">
 																{elemento.name}
 															</Link>
 														</li>
-														<button id={`bt-${elemento.id}`} onClick={()=>borraElemento(index)}><i className="fas fa-trash-alt" /></button>
+														<button id={`bt-${elemento.uid}`} onClick={()=>borraElemento(index)}><i className="fas fa-trash-alt" /></button>
 													</div>
 													)
 									})}
