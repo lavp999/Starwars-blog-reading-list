@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 
 export const Navbar = (props) => {
 
-//	<button id={`bt-${elemento.id}`} onClick={()=>props.setLista(props.lista.filter((e, i) => i != index))}>h</button>
-
 	function borraElemento(id){
 		props.setListaFav(props.listaFav.filter((ele, i)=> i != id));
 	}
@@ -24,11 +22,15 @@ export const Navbar = (props) => {
 								</a>
 								<ul className="dropdown-menu favoritos">
 									{props.listaFav.map((elemento, index)=>{
-										return(<div key={`div-${elemento.id}`}>
-												  <li><a className="dropdown-item" id={`li-${elemento.id}`} href={elemento.id}>{elemento.name}</a></li>
-												  <button id={`bt-${elemento.id}`} onClick={()=>borraElemento(index)}><i className="fas fa-trash-alt" /></button>
-											   </div>
-										)
+											return	(<div key={`div-${elemento.id}`}>
+														<li key={`li-${elemento.id}`} >
+															<Link to={`/singleCharacter/${elemento.id}`} key={`link-${elemento.id}`} className="dropdown-item">
+																{elemento.name}
+															</Link>
+														</li>
+														<button id={`bt-${elemento.id}`} onClick={()=>borraElemento(index)}><i className="fas fa-trash-alt" /></button>
+													</div>
+													)
 									})}
 								</ul>
 							</li>
