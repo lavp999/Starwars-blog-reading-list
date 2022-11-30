@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { BrowserRouter, Route, Switch, useParams } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
+import imagen from "../img/rigo-baby.jpg";
 
 import { Home } from "./views/home.js";
 import { Demo } from "./views/demo";
@@ -18,11 +19,11 @@ const Layout = () => {
 	const basename = process.env.BASENAME || "";
 	const [listaFav, setListaFav] = useState([]);
 
-	const [lista, setLista] = useState([{"name": "Luke Skywalker", "id":1, "gender": "Masculino", "hair_color": "azul", "eye_color": "no los abre"},
-										{"name": "Otto Skywalker", "id":2, "gender": "Femenino", "hair_color": "verde", "eye_color": "negro"},
-										{"name": "Otta Skywalker", "id":3, "gender": "Masculino", "hair_color": "rojo", "eye_color": "azul"},
-										{"name": "Otte Skywalker", "id":4, "gender": "Femenino", "hair_color": "negro", "eye_color": "negro"},
-										{"name": "Otti Skywalker", "id":5, "gender": "Femenino", "hair_color": "claro", "eye_color": "verde"},
+	const [lista, setLista] = useState([{"name": "Luke Skywalker", "id":1, "gender": "Masculino", "hair_color": "azul", "eye_color": "no los abre", "image": imagen},
+										{"name": "Otto Skywalker", "id":2, "gender": "Femenino", "hair_color": "verde", "eye_color": "negro", "image": imagen},
+										{"name": "Otta Skywalker", "id":3, "gender": "Masculino", "hair_color": "rojo", "eye_color": "azul", "image": imagen},
+										{"name": "Otte Skywalker", "id":4, "gender": "Femenino", "hair_color": "negro", "eye_color": "negro", "image": imagen},
+										{"name": "Otti Skywalker", "id":5, "gender": "Femenino", "hair_color": "claro", "eye_color": "verde", "image": imagen},
 									]);
 
 	return (
@@ -34,18 +35,22 @@ const Layout = () => {
 						<Route exact path="/">
 							<Home lista={lista} setLista={setLista} listaFav={listaFav} setListaFav={setListaFav} />
 						</Route>
-						<Route exact path="/demo">
-							<Demo />
-						</Route>
 						<Route exact path="/singleCharacter/:characterId">
-							<DetailCharacter />
+							<DetailCharacter  listaFav={listaFav} setListaFav={setListaFav} />
 						</Route>
+
 						<Route exact path="/singlePlanet/:planetId">
 							<DetailPlanet />
+						</Route>
+
+
+						<Route exact path="/demo">
+							<Demo />
 						</Route>
 						<Route>
 							<h1>Not found!</h1>
 						</Route>
+
 					</Switch>
 				</ScrollToTop>
 			</BrowserRouter>
