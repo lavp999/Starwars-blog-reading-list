@@ -11,7 +11,7 @@ export const DetailCharacter = (props) => {
         props.setListaFav([...props.listaFav, {"id":params.characterId, "name":character.name }]);
     }
 
-    function existeFav(lista, id){
+    function existeFav(lista, id){ 
           return !(Array.isArray(lista) && lista.find(lf => lf.id == id));
     }
 
