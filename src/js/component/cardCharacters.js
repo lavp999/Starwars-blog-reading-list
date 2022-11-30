@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import imagen from "../../img/rigo-baby.jpg";
+import { Link } from "react-router-dom";
 
 export const CardCharacters = (props) => {
     const personaje = props.personaje;
@@ -20,13 +21,16 @@ export const CardCharacters = (props) => {
     }
 
     return (<div key={`div-${personaje.id}`} className="col-4 card tarjeta">
-                <img src={imagen} className="card-img-top" alt="" />
+                <img src={personaje.image} className="card-img-top" alt="" />
                 <div className="card-body">
                     <h5 className="card-title">{personaje.name}</h5>
                     <p className="card-text">{`Gender: ${personaje.gender}`}</p>
                     <p className="card-text">{`Hair Color: ${personaje.hair_color}`}</p>
                     <p className="card-text">{`Eye-Color: ${personaje.eye_color}`}</p>
-                    <a href="#" className="btn btn-primary">Learn more!</a>
+
+                    <Link to={`/singleCharacter/${personaje.id}`} key={`link-${personaje.id}`} className="btn btn-primary">
+                        Learn more!
+					</Link>
 
                     {existeFav(props.listaFav, personaje.id) && (<button onClick={()=>addFavorit()}                                 
                                                                          className="btn btn-primary"><i className="fad fa-heart"></i>
