@@ -12,15 +12,13 @@ export const Characters = (props) => {
                         {props.lista.map((ele) => {return (<CardCharacters  personaje={ele}
                                                                             listaFav={props.listaFav}
                                                                             setListaFav={props.setListaFav}/>)
-                                                })
-                                                }
+                        })}
                 </div>
 
                 <div className="row p-0 justify-content-between">
                     <div className="col-auto mr-auto">
-                        {console.log(props.pie)}
                         <Link to="/" className="btn btn-primary">
-                        <p>{props.pie.previous} - {props.pie.next}</p>
+                            {props.pie.previous} - {props.pie.next}
                         </Link>
                     </div>
                     <div className="col-auto">

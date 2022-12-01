@@ -9,6 +9,11 @@ export const Home = (props) => {
 					<Characters lista = {props.lista} setLista={props.setLista} listaFav={props.listaFav} setListaFav={props.setListaFav} pie={props.pie}/>
 				</div>
 				<div>
+					<hr className="my-4" />
+					<hr className="my-4" />
+					<hr className="my-4" />
+				</div>
+				<div>
 					<Planets />
 				</div>
 			</div>

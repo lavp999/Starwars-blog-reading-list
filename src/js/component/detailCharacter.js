@@ -6,7 +6,6 @@ export const DetailCharacter = (props) => {
     const [character, setCharacter] = useState("Vacio");
     const [description, setDescription] = useState("Vacio");
     
-
     const addFavorit = ()=>{
         props.setListaFav([...props.listaFav, {"id":params.characterId, "name":character.name }]);
     }
@@ -14,8 +13,7 @@ export const DetailCharacter = (props) => {
     function existeFav(lista, id){ 
           return !(Array.isArray(lista) && lista.find(lf => lf.id == id));
     }
-
-
+    
     useEffect(()=>{
         fetch(`https://www.swapi.tech/api/people/${params.characterId}`)
             .then(res => res.json())
@@ -56,8 +54,6 @@ export const DetailCharacter = (props) => {
                                                                                className="btn btn-primary"><i className="fad fa-heart"></i>
                                                                        </button>)
                     }
-
-
                 </div>
             </>
             )

@@ -30,12 +30,11 @@ export const CardCharacters = (props) => {
                     <p className="card-text">{`Hair Color: ${personaje.hair_color}`}</p>
                     <p className="card-text">{`Eye-Color: ${personaje.eye_color}`}</p>
                     */}
-
                     <div className="row p-0 justify-content-between">
                         <div className="col-auto mr-auto">
-                        <Link to={`/singleCharacter/${personaje.uid}`} key={`lnk-${personaje.uid}`} className="btn btn-primary">
-                            Learn more!
-                        </Link>
+                            <Link to={`/singleCharacter/${personaje.uid}`} className="btn btn-primary">
+                                Learn more!
+                            </Link>
                         </div>
                         <div className="col-auto">
                         {existeFav(props.listaFav, personaje.uid) && (<button onClick={()=>addFavorit()}                                 
