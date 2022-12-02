@@ -17,30 +17,6 @@ const Layout = () => {
 	const basename = process.env.BASENAME || "";
 	const [listaFav, setListaFav] = useState([]);
 
-	const [lista, setLista] = useState([]);
-	const [pie, setPie] = useState({});
-	/*
-	const [lista, setLista] = useState([{"name": "Luke Skywalker", "uid":1, "gender": "Masculino", "hair_color": "azul", "eye_color": "no los abre", "image": imagen},
-										{"name": "Otto Skywalker", "uid":2, "gender": "Femenino", "hair_color": "verde", "eye_color": "negro", "image": imagen},
-										{"name": "Otta Skywalker", "uid":3, "gender": "Masculino", "hair_color": "rojo", "eye_color": "azul", "image": imagen},
-										{"name": "Otte Skywalker", "uid":4, "gender": "Femenino", "hair_color": "negro", "eye_color": "negro", "image": imagen},
-										{"name": "Otti Skywalker", "uid":5, "gender": "Femenino", "hair_color": "claro", "eye_color": "verde", "image": imagen},
-									]);
-	*/
-	useEffect(()=>{
-		fetch("https://www.swapi.tech/api/people")
-			.then(res => res.json())
-			.then((response) => {
-				setPie({"next": response.next, 
-						"previous": response.previous, 
-						"total_pages" : response.total_pages, 
-						"total_records" : response.total_records});
-
-				setLista(response.results);
-			})
-			.catch(err => console.error(err))
-	},[]);						
-
 	return (
 		<div className="container">
 			<BrowserRouter basename={basename}>
@@ -48,7 +24,7 @@ const Layout = () => {
 					<Navbar listaFav={listaFav} setListaFav={setListaFav} />
 					<Switch>
 						<Route exact path="/">
-							<Home lista={lista} setLista={setLista} listaFav={listaFav} setListaFav={setListaFav} pie = {pie}/>
+							<Home listaFav={listaFav} setListaFav={setListaFav}/>
 						</Route>
 						<Route exact path="/singleCharacter/:characterId">
 							<DetailCharacter  listaFav={listaFav} setListaFav={setListaFav} />
