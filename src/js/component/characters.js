@@ -20,7 +20,7 @@ export const Characters = (props) => {
                         <Link to="/" onMouseDown={()=>{props.setPaginaChar(props.pie.previous)}} className="btn btn-primary">
                             {props.pie.previous}
                         </Link>
-                        <Link to="/" onMouseDown={()=>{props.setPaginaChar(props.pie.previous)}} className="btn btn-primary">
+                        <Link to="/" onMouseDown={()=>{props.setPaginaChar(props.pie.next)}} className="btn btn-primary">
                             {props.pie.next}
                         </Link>
                     </div>
