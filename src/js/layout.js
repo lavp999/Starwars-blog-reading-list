@@ -1,4 +1,4 @@
-import React, { useState , useEffect } from "react";
+import React, { useState , useEffect, useContext } from "react";
 import { BrowserRouter, Route, Switch, useParams } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 
@@ -15,19 +15,18 @@ const Layout = () => {
 	// the basename is used when your project is published in a subdirectory and not in the root of the domain
 	// you can set the basename on the .env file located at the root of this project, E.g: BASENAME=/react-hello-webapp/
 	const basename = process.env.BASENAME || "";
-	const [listaFav, setListaFav] = useState([]);
 
 	return (
 		<div className="container">
 			<BrowserRouter basename={basename}>
 				<ScrollToTop>
-					<Navbar listaFav={listaFav} setListaFav={setListaFav} />
+					<Navbar/>
 					<Switch>
 						<Route exact path="/">
-							<Home listaFav={listaFav} setListaFav={setListaFav}/>
+							<Home/>
 						</Route>
 						<Route exact path="/singleCharacter/:characterId">
-							<DetailCharacter  listaFav={listaFav} setListaFav={setListaFav} />
+							<DetailCharacter />
 						</Route>
 
 						<Route exact path="/singlePlanet/:planetId">

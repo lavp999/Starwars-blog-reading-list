@@ -1,13 +1,12 @@
-import React, { Component } from "react";
+import React, { useContext }from "react";
 import imagen from "../../img/rigo-baby.jpg"; // https://bloygo.yoigo.com/guia-personajes-star-wars-luke-skywalker-rey/
 import { Link } from "react-router-dom";
+import { Context } from "../store/appContext";
+
 
 export const CardCharacters = (props) => {
     const personaje = props.personaje;
-
-    const addFavorit = ()=>{
-        props.setListaFav([...props.listaFav, {"id":personaje.uid, "name":personaje.name }]);
-    }
+    const {store, actions} = useContext(Context);
 
     function existeFav(lista, id){
         /*
@@ -22,25 +21,20 @@ export const CardCharacters = (props) => {
 
     return (<div key={`div-${personaje.uid}`} className="col-4 card tarjeta">
                 {/* <img src={`../../src/img/fotos/${personaje.uid}.jpg`} className="card-img-top" alt="" /> */}
-                <img src={imagen} className="card-img-top" alt="" /> 
-                <div className="card-body">
+                <img key={`img-${personaje.uid}`} src={imagen} className="card-img-top" alt="" /> 
+                <div key={`div2-${personaje.uid}`} className="card-body">
                     <h5 className="card-title">{personaje.name} - {personaje.uid}</h5>
-                    {/*
-                    <p className="card-text">{`Gender: ${personaje.gender}`}</p>
-                    <p className="card-text">{`Hair Color: ${personaje.hair_color}`}</p>
-                    <p className="card-text">{`Eye-Color: ${personaje.eye_color}`}</p>
-                    */}
-                    <div className="row p-0 justify-content-between">
-                        <div className="col-auto mr-auto">
-                            <Link to={`/singleCharacter/${personaje.uid}`} className="btn btn-primary">
+                    <div key={`div3-${personaje.uid}`} className="row p-0 justify-content-between">
+                        <div key={`div31-${personaje.uid}`} className="col-auto mr-auto">
+                            <Link key={`lnk-${personaje.uid}`} to={`/singleCharacter/${personaje.uid}`} className="btn btn-primary">
                                 Learn more!
                             </Link>
                         </div>
-                        <div className="col-auto">
-                        {existeFav(props.listaFav, personaje.uid) && (<button onClick={()=>addFavorit()}                                 
-                                                                            className="btn btn-primary"><i className="fad fa-heart"></i>
-                                                                    </button>)
-                        }
+                        <div key={`div4-${personaje.uid}`} className="col-auto">
+                            {existeFav(store.misFav, personaje.uid) && (<button key={`btn-${personaje.uid}`} onClick={()=>actions.addFav({"id":personaje.uid, "name":personaje.name })}                                 
+                                                                                className="btn btn-primary"><i className="fad fa-heart"></i>
+                                                                        </button>)
+                            }
                         </div>
                     </div>
                 </div>

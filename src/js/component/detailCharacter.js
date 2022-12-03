@@ -1,14 +1,12 @@
-import React, { useState , useEffect } from "react";
+import React, { useState , useEffect , useContext} from "react";
 import { useParams } from "react-router-dom";
+import { Context } from "../store/appContext";
 
 export const DetailCharacter = (props) => {
     const params = useParams();
     const [character, setCharacter] = useState("Vacio");
     const [description, setDescription] = useState("Vacio");
-    
-    const addFavorit = ()=>{
-        props.setListaFav([...props.listaFav, {"id":params.characterId, "name":character.name }]);
-    }
+    const {store, actions} = useContext(Context);
 
     function existeFav(lista, id){ 
           return !(Array.isArray(lista) && lista.find(lf => lf.id == id));
@@ -50,9 +48,9 @@ export const DetailCharacter = (props) => {
                     </p>*/}
 
                     <hr className="my-4" />
-                    {existeFav(props.listaFav, params.characterId) && (<button onClick={()=>addFavorit()}                                 
-                                                                               className="btn btn-primary"><i className="fad fa-heart"></i>
-                                                                       </button>)
+                    {existeFav(store.misFav, params.characterId) && (<button onClick={()=>actions.addFav({"id":params.characterId, "name":character.name })}                                 
+                                                                             className="btn btn-primary"><i className="fad fa-heart"></i>
+                                                                     </button>)
                     }
                 </div>
             </>

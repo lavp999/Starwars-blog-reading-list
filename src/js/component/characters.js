@@ -10,9 +10,7 @@ export const Characters = (props) => {
                 </div>
 
                 <div className="row">
-                        {props.lista.map((ele) => {return (<CardCharacters  personaje={ele}
-                                                                            listaFav={props.listaFav}
-                                                                            setListaFav={props.setListaFav}/>)
+                        {props.lista.map((ele) => {return (<CardCharacters  personaje={ele}/>)
                         })}
                 </div>
                 <div className="row p-0 justify-content-between">
