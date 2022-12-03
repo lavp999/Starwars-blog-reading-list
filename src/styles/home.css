@@ -6,9 +6,9 @@
     background-color: aliceblue;
 }
 
-.navbar img{
-    width: 30%;
-    height: 30%;
+.logo{
+    width: 15%;
+    height: 15%;
 }
 
 
@@ -30,6 +30,22 @@
     border: 0px;
 }
 
+.divListaFavoritos {
+    display: flex;
+    font-size: medium;
+    padding: 1px;
+    margin: 0px;
+}
+
+.colorPlanetas {
+    color: rgb(4, 102, 250);
+}
+
+.colorCharacters {
+    color: rgb(133, 5, 180);
+}
+
+
 .tarjeta{
     width: 18rem;
     margin: 10px 10px 10px;
@@ -39,3 +55,12 @@
     max-width: 400px;
     max-height: 200px;
 }
+
+.carrusel > .row {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  .carrusel > .row > .col-4 {
+    display: inline-block;
+  }
