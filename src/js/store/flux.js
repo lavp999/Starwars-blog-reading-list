@@ -13,9 +13,15 @@ const getState = ({ getStore, getActions, setStore }) => {
 					initial: "white"
 				}
 			],
-			misFav: []
+			servidor:  "https://www.swapi.tech/api/",
+			misFav: [],
+			listaChar: [],
+			globalChar: {}
 		},
 		actions: {
+			// ---------------------------------------------------------------
+			// Acciones con FAVORITOS
+			// ---------------------------------------------------------------
 			getFav: () => {
 				return misFav;
 			},
@@ -25,12 +31,26 @@ const getState = ({ getStore, getActions, setStore }) => {
 				setStore({misFav : [...store.misFav, elem]});
 			},
 
-			delFav: (id) => {
+			delFav: (id, tipo) => {
 				let store = getStore()
-				setStore({misFav : store.misFav.filter((ele, i)=> i != id)});
+				setStore({misFav : store.misFav.filter((ele, i)=> !(i == id && ele.tipo == tipo))});
 			},			
+			// ---------------------------------------------------------------
+			// Acciones con Datos de CHARACTERS
+			// ---------------------------------------------------------------
+			setListaChar: (lista) => {
+				setStore({listaChar : lista});
+			},
+			setGlobalChar: (obj) => {
+				setStore({globalChar : obj});
+			},
+			//setGlobalCharPagActual: (n) => {
+			//	setStore({globalChar["pag_actual"] : n});
+			//},
 
+			// ---------------------------------------------------------------
 			// Use getActions to call a function within a fuction
+			// ---------------------------------------------------------------
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
 			},

@@ -2,10 +2,12 @@ import React, { useState , useEffect, useContext } from "react";
 import { BrowserRouter, Route, Switch, useParams } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 
-import { Home } from "./views/home.js";
 import { Demo } from "./views/demo";
 import injectContext from "./store/appContext";
 
+import { Home } from "./views/home.js";
+import { HomeCharacters } from "./views/homeCharacters";
+import { HomePlanets } from "./views/homePlanets";
 import { Navbar } from "./component/navbar";
 import { DetailPlanet } from "./component/detailPlanet";
 import { DetailCharacter } from "./component/detailCharacter";
@@ -22,8 +24,10 @@ const Layout = () => {
 				<ScrollToTop>
 					<Navbar/>
 					<Switch>
-						<Route exact path="/">
-							<Home/>
+						<Route exact path="/:pagina">
+							{/*<Home/>*/}
+							<HomeCharacters />
+							<HomePlanets />
 						</Route>
 						<Route exact path="/singleCharacter/:characterId">
 							<DetailCharacter />

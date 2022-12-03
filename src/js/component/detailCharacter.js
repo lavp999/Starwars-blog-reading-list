@@ -49,7 +49,7 @@ export const DetailCharacter = (props) => {
 
                     <hr className="my-4" />
                     {existeFav(store.misFav, params.characterId) && (<button onClick={()=>actions.addFav({"id":params.characterId, "name":character.name })}                                 
-                                                                             className="btn btn-primary"><i className="fad fa-heart"></i>
+                                                                             className="btn btn-primary"><i className="fas fa-heart"></i>
                                                                      </button>)
                     }
                 </div>
