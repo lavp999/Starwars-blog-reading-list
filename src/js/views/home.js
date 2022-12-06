@@ -14,7 +14,6 @@ export const Home = (props) => {
 	const {store} = useContext(Context);
 
 	useEffect(()=>{
-		console.log(params.pagina);
 		fetch(`${store.servidor}people?page=${paginaChar}&limit=10`)
 			.then(res => res.json())
 			.then((response) => {

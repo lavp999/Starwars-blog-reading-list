@@ -3,7 +3,7 @@ import "../../styles/home.css";
 import { useParams } from "react-router-dom";
 import { Characters } from "../component/characters.js";
 import { Context } from "../store/appContext";
-import {getPaginaChar} from "../utilidades";
+import { getPagina } from "../utilidades";
 
 export const HomeCharacters = () => {
     const params = useParams();
@@ -19,16 +19,17 @@ export const HomeCharacters = () => {
 			.then(res => res.json())
 			.then((response) => {
 				actions.setListaChar(response.results);
-				actions.setGlobalChar({	"next": getPaginaChar(response.next), 
-										"previous": getPaginaChar(response.previous), 
+				actions.setGlobalChar({	"next": getPagina(response.next), 
+										"previous": getPagina(response.previous), 
 										"total_pages" : response.total_pages, 
 										"total_records" : response.total_records,
-										"pag_actual": pagina});
+										"pag_actual": params.paginaChar});
 			})
 			.catch(err => console.error(err));
 	},[]);						
 
 	return (<div className="text-center mt-5">
+
 				<div>
 					<Characters />
 				</div>

@@ -1,40 +1,18 @@
 import React, { useState , useEffect } from "react";
 import { CardPlanets } from "./cardPlanets";
 import { Link } from "react-router-dom";
+import { leerPlanets} from "../utilidades";
+import { useParams } from "react-router-dom";
 
 export const Planets = (props) => {
-   
+	const params = useParams();
+
+	// Planetas lo voy a hacer con UseState, ya que Characters lo he hecho con UseContext
 	const [listaPlanets, setListaPlanets] = useState([]);
 	const [piePlanets, setPiePlanets] = useState({});
-	const [paginaPla, setPaginaPla] = useState("1");
-
-	const servidor = "https://www.swapi.tech/api/";
-
-	const recortaPagina = (cadena) => {
-		let pagina = "-1";
-
-		if (cadena != null){
-			let p1 = cadena.indexOf("?page=");
-			let p2 = cadena.indexOf("&limit");
-			if (p1 !== -1 && p2 != -1)
-				pagina = cadena.substring(p1+6 , p2);
-		}
-		setPaginaPla(pagina);
-		return pagina;
-	}
-
-	useEffect(()=>{
-		fetch(`${servidor}planets?page=${props.pagina}&limit=6`)
-		.then(res => res.json())
-		.then((response) => {
-			setPiePlanets({	"next": recortaPagina(response.next), 
-					 		"previous": recortaPagina(response.previous), 
-							"total_pages" : response.total_pages, 
-							"total_records" : response.total_records});
-			setListaPlanets(response.results);
-		})
-		.catch(err => console.error(err));		
-	},[]);						
+	
+		{/* Cargamos de nuevo la lista si la página que nos viene en parámetro es diferente a la que tenemos cargada */}
+		{params.pagina != piePlanets.pag_actual && leerPlanets(params.pagina, setListaPlanets , setPiePlanets)}
 
         return (<>
                 <div className="row">
