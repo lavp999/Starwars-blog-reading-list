@@ -8,12 +8,10 @@ import { getPagina } from "../utilidades";
 export const HomeCharacters = () => {
     const params = useParams();
 	const {store, actions} = useContext(Context);
-
-	useEffect(()=>{
-		let pagina = 1;
-
-		if (!isNaN(params.paginaChar))
-			pagina = params.paginaChar;
+	
+	const leerCharacters = (pagina) =>{
+		if (isNaN(pagina))
+			pagina = 1;
 		
 		fetch(`${store.servidor}people?page=${pagina}&limit=10`)
 			.then(res => res.json())
@@ -23,13 +21,16 @@ export const HomeCharacters = () => {
 										"previous": getPagina(response.previous), 
 										"total_pages" : response.total_pages, 
 										"total_records" : response.total_records,
-										"pag_actual": params.paginaChar});
+										"pag_actual": pagina});
 			})
 			.catch(err => console.error(err));
+	}
+
+	useEffect(()=>{
+		leerCharacters(params.paginaChar);
 	},[]);						
 
 	return (<div className="text-center mt-5">
-
 				<div>
 					<Characters />
 				</div>
