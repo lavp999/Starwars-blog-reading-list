@@ -16,8 +16,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 			servidor:  "https://www.swapi.tech/api/",
 			misFav: [],
 			listaChar: [],
-			globalChar: {}
-		},
+			globalChar: {"next": 0, 
+						 "previous": 0, 
+						 "total_pages" : 0, 
+						 "total_records" : 0,
+						 "pag_actual": 0}
+						},
 		actions: {
 			// ---------------------------------------------------------------
 			// Acciones con FAVORITOS
@@ -44,10 +48,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 			setGlobalChar: (obj) => {
 				setStore({globalChar : obj});
 			},
-			//setGlobalCharPagActual: (n) => {
-			//	setStore({globalChar["pag_actual"] : n});
-			//},
-
 			// ---------------------------------------------------------------
 			// Use getActions to call a function within a fuction
 			// ---------------------------------------------------------------

@@ -17,20 +17,20 @@ export const Navbar = (props) => {
 						</Link>
 					</div>
 					<div className="col-auto mr-auto dropdown">
-						<ul className="nav nav-pills">
+						<ul key="ulNav1" className="nav nav-pills">
 							<li className="nav-item dropdown active">
 								<a className="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
 									{`Favoritos  (${store.misFav.length}) `}
 								</a>
-								<ul className="dropdown-menu favoritos">
+								<ul key="ulNav2" className="dropdown-menu favoritos">
 									{store.misFav.map((elemento, index)=>{
-											return	(<div key={`div-${elemento.uid}`} className="divListaFavoritos">
-														<li key={`li-${elemento.uid}`}>
-															<Link to={`/singleCharacter/${elemento.uid}`} key={`link-${elemento.uid}`} className={`dropdown-item ${elemento.tipo == "P" ? "colorPlanetas" : "colorCharacters"}`}>
+											return	(<div key={`div-${elemento.id}${elemento.tipo}`} className="divListaFavoritos">
+														<li key={`li-${elemento.id}${elemento.tipo}`}>
+															<Link to={`/singleCharacter/${elemento.id}`} key={`link-${elemento.id}${elemento.tipo}`} className={`dropdown-item ${elemento.tipo == "P" ? "colorPlanetas" : "colorCharacters"}`}>
 																{elemento.name}
 															</Link>
 														</li>
-														<button id={`bt-${elemento.uid}`} onClick={()=>borraElemento(index, elemento.tipo)}><i className="fas fa-trash-alt" /></button>
+														<button id={`bt-${elemento.id}${elemento.tipo}`} onClick={()=>borraElemento(index, elemento.tipo)}><i className="fas fa-trash-alt" /></button>
 													 </div>
 													)
 									})}

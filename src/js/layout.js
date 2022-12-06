@@ -1,5 +1,5 @@
-import React, { useState , useEffect, useContext } from "react";
-import { BrowserRouter, Route, Switch, useParams } from "react-router-dom";
+import React from "react";
+import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 
 import { Demo } from "./views/demo";
@@ -24,6 +24,15 @@ const Layout = () => {
 				<ScrollToTop>
 					<Navbar/>
 					<Switch>
+						{/*<Redirect from="/" to="/1" />
+							Como no se redirigirlo esta es la única chapuza que me ha funcionado!!
+							Repetir la ruta
+						*/}						
+						<Route exact path="/">
+							<HomeCharacters />
+							<HomePlanets />
+						</Route>
+
 						<Route exact path="/:pagina">
 							{/*<Home/>*/}
 							<HomeCharacters />

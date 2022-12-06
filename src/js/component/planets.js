@@ -11,8 +11,17 @@ export const Planets = (props) => {
 	const [listaPlanets, setListaPlanets] = useState([]);
 	const [piePlanets, setPiePlanets] = useState({});
 	
-		{/* Cargamos de nuevo la lista si la página que nos viene en parámetro es diferente a la que tenemos cargada */}
-		{params.pagina != piePlanets.pag_actual && leerPlanets(params.pagina, setListaPlanets , setPiePlanets)}
+		{/* Cargamos de nuevo la lista si la página que nos viene en parámetro es diferente a la que tenemos cargada 
+            todos estoas condiciones es porque quiero tratar de manera diferentes personajes y planetas, si no sería mas sencillo:
+            {params.pagina != piePlanets.pag_actual) && leerPlanets(params.pagina, setListaPlanets , setPiePlanets)}
+        */}
+		{
+            if (!params.pagina || !piePlanets.pag_actual)
+                params.pagina = "1";
+
+            if (params.pagina.substr(0,1) != "C")
+                (params.pagina != piePlanets.pag_actual) && leerPlanets(params.pagina, setListaPlanets , setPiePlanets)        
+        }
 
         return (<>
                 <div className="row">
