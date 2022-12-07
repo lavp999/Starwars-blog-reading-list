@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import { CardCharacters } from "./cardCharacters.js";
-import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 import { useParams } from "react-router-dom";
 
