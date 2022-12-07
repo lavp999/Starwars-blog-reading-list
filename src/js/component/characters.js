@@ -24,7 +24,7 @@ export const Characters = () => {
                             </Link>
                         }
                         {store.globalChar.next != -1 &&   
-                            // <Link key="KeyChar2" to={`/C${store.globalChar.next}`} onClick={actualizaPagChar(store.globalChar.next)} className="btn btn-primary">
+                            // <Link key="KeyChar2" to={`/C${store.globalChar.next}`} onClick={()=>actualizaPagChar(store.globalChar.next)} className="btn btn-primary">
                             <Link key="KeyChar2" to={`/C${store.globalChar.next}`} className="btn btn-primary">
                                 {store.globalChar.next}
                             </Link>

@@ -35,9 +35,15 @@ export const HomeCharacters = () => {
 			}
 		}
 	}
+	useEffect(() =>{
+		// leerCharacters()
+	},[params.pagina])
+
+	useEffect(() =>{
+		console.log("PAso por aquí?");
+	},[])
 
 	return (<div className="text-center mt-5">
-				{leerCharacters()}
 				<div>
 					<Characters />
 				</div>

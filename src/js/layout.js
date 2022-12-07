@@ -26,13 +26,13 @@ const Layout = () => {
 					<Switch>
 						{/*<Redirect from="/" to="/1" />
 							Como no se redirigirlo esta es la única chapuza que me ha funcionado!!
-							Repetir la ruta
+							Repetir la ruta						
 						*/}						
+
 						<Route exact path="/">
 							<HomeCharacters />
 							<HomePlanets />
 						</Route>
-
 						<Route exact path="/:pagina">
 							{/*<Home/>*/}
 							<HomeCharacters />
@@ -51,7 +51,7 @@ const Layout = () => {
 							<Demo />
 						</Route>
 						<Route>
-							<h1>Not found!</h1>
+							<h1>Onde vas!!</h1>
 						</Route>
 
 					</Switch>
