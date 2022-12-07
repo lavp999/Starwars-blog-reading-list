@@ -20,7 +20,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 						 "previous": 0, 
 						 "total_pages" : 0, 
 						 "total_records" : 0,
-						 "pag_actual": 0}
+						 "pag_actual": 1,
+						 "pag_anterior": 0}
 						},
 		actions: {
 			// ---------------------------------------------------------------

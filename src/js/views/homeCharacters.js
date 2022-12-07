@@ -8,7 +8,7 @@ import { getPagina } from "../utilidades";
 export const HomeCharacters = () => {
     const params = useParams();
 	const {store, actions} = useContext(Context);
-	
+	/*
 	const leerCharacters = () =>{
 		let pagina = 1;
 
@@ -35,15 +35,32 @@ export const HomeCharacters = () => {
 			}
 		}
 	}
-	useEffect(() =>{
-		// leerCharacters()
-	},[params.pagina])
+*/
+const leerCharacters = () =>{
+	console.log("y ahora1: ", store.globalChar)
+		fetch(`${store.servidor}people?page=${store.globalChar.pag_actual}&limit=10`)
+		.then(res => res.json())
+		.then((response) => {
+			actions.setListaChar(response.results);
+			actions.setGlobalChar({	"next": getPagina(response.next), 
+									"previous": getPagina(response.previous), 
+									"total_pages" : response.total_pages, 
+									"total_records" : response.total_records,
+									"pag_anterior": store.globalChar.pag_actual,
+									"pag_actual": store.globalChar.pag_actual
+								   });
+		})
+		.catch(err => console.error(err));
 
+		console.log("y ahora2: ", store.globalChar)
+}
+/*
 	useEffect(() =>{
-		console.log("PAso por aquí?");
-	},[])
-
+		leerCharacters()
+	},[store.globalChar.pag_actual])
+*/
 	return (<div className="text-center mt-5">
+				{(store.globalChar.pag_anterior !=  store.globalChar.pag_actual) && leerCharacters()}
 				<div>
 					<Characters />
 				</div>
