@@ -1,5 +1,4 @@
 import React, { useContext }from "react";
-import imagen from "../../img/rigo-baby.jpg";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 
@@ -13,9 +12,9 @@ export const CardCharacters = (props) => {
     }
 
     return (<div className="col-4 card tarjeta">
-                {/* <img src={`/../../img/fotos/${personaje.uid}.jpg`} className="card-img-top" alt="" /> */}
+                {/* <img src={'1.jpg'} className="card-img-top" alt="" /> */}
                 {/* <img key={`img-${personaje.uid}`} src={imagen} className="card-img-top" alt="" />  */}
-                <img src="https://www.commonsensemedia.org/sites/default/files/styles/ratio_16_9_large/public/blog/starwars-darth-hand-blog-569x329.jpg" className="card-img-top" alt="" /> 
+                <img src="https://www.commonsensemedia.org/sites/default/files/styles/ratio_16_9_large/public/blog/starwars-darth-hand-blog-569x329.jpg" className="card-img-top" alt="" />
                 <div className="card-body">
                     <h5 className="card-title">{personaje.name} - {personaje.uid}</h5>
                     <div className="row p-0 justify-content-between">

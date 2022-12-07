@@ -49,6 +49,17 @@ const getState = ({ getStore, getActions, setStore }) => {
 			setGlobalChar: (obj) => {
 				setStore({globalChar : obj});
 			},
+			setGlobalCharActual: (actual) => {
+				let store = getStore();
+				let obj = {	"next": store.globalChar.next, 
+							"previous": store.globalChar.previous, 
+							"total_pages" : store.globalChar.total_pages, 
+							"total_records" : store.globalChar.total_records,
+							"pag_anterior": store.globalChar.pag_anterior,
+							"pag_actual": actual
+			  			   };
+				setStore({globalChar : obj});
+			},
 			// ---------------------------------------------------------------
 			// Use getActions to call a function within a fuction
 			// ---------------------------------------------------------------
