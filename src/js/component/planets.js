@@ -1,4 +1,4 @@
-import React, { useState , useEffect } from "react";
+import React, { useState } from "react";
 import { CardPlanets } from "./cardPlanets";
 import { Link } from "react-router-dom";
 import { leerPlanets} from "../utilidades";
@@ -11,21 +11,17 @@ export const Planets = (props) => {
 	const [listaPlanets, setListaPlanets] = useState([]);
 	const [piePlanets, setPiePlanets] = useState({});
 	
-		{/* Cargamos de nuevo la lista si la página que nos viene en parámetro es diferente a la que tenemos cargada 
-            todos estoas condiciones es porque quiero tratar de manera diferentes personajes y planetas, si no sería mas sencillo:
-            {params.pagina != piePlanets.pag_actual) && leerPlanets(params.pagina, setListaPlanets , setPiePlanets)}
-        */}
 		{
             if (!params.pagina || !piePlanets.pag_actual)
                 params.pagina = "1";
 
-            if (params.pagina.substr(0,1) != "C")
-                (params.pagina != piePlanets.pag_actual) && leerPlanets(params.pagina, setListaPlanets , setPiePlanets)        
+            if (params.pagina != piePlanets.pag_actual)
+                leerPlanets(params.pagina, setListaPlanets , setPiePlanets)        
         }
 
         return (<>
                 <div className="row">
-                    <h1>Planetas</h1>
+                    <h1>Planetas con Parámetros</h1>
                 </div>
 
                 <div className="row text-center">

@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import imagen from "../../img/rigo-baby.jpg";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
-
+import { existePlanetFav }  from "../utilidades.js"
 
 export const CardPlanets = (props) => {
     const planeta = props.planeta;
@@ -24,7 +24,7 @@ export const CardPlanets = (props) => {
                             </Link>
                         </div>
                         <div className="col-auto">
-                            {existeFav(store.misFav, planeta.uid, "P") && (<button onClick={()=>actions.addFav({"id":planeta.uid, "name":planeta.name, "tipo": "P"  })}                                 
+                            {existePlanetFav(store.misFav, planeta.uid, "P") && (<button onClick={()=>actions.addFav({"id":planeta.uid, "name":planeta.name, "tipo": "P"  })}                                 
                                                                                 className="btn btn-primary"><i className="fas fa-heart"></i>
                                                                            </button>)
                             }

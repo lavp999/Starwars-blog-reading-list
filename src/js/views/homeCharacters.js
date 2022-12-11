@@ -1,12 +1,10 @@
-import React, { useState , useEffect , useContext } from "react";
+import React, { useContext } from "react";
 import "../../styles/home.css";
-import { useParams } from "react-router-dom";
 import { Characters } from "../component/characters.js";
 import { Context } from "../store/appContext";
-import { getPagina } from "../utilidades";
+import { getPagina } from "../utilidades"; 
 
 export const HomeCharacters = () => {
-    const params = useParams();
 	const {store, actions} = useContext(Context);
 
 const leerCharacters = () =>{

@@ -10,7 +10,7 @@ export const getPagina = (cadena, setPagina) => {
             pagina = cadena.substring(p1+6 , p2);
     }
 
-    return pagina;
+    return pagina; 
 }
 
 
@@ -28,3 +28,7 @@ export const leerPlanets = (pagina, setListaPlanets, setPiePlanets) =>{
     .catch(err => console.error(err));		
 }
 
+
+export function existePlanetFav(lista, id, tipo){
+    return !(Array.isArray(lista) && lista.find(lf => (lf.id == id && lf.tipo == tipo)));
+}

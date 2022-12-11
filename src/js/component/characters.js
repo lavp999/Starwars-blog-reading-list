@@ -14,7 +14,7 @@ export const Characters = () => {
 
         return (<>
                 <div key="CharDiv1" className="row">
-                    <h1>Personajes</h1> 
+                    <h1>Personajes con Store</h1> 
                 </div>
 
                 <div key="CharDiv2" className="carrusel">

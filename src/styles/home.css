@@ -54,6 +54,8 @@
 .tarjeta img {
     max-width: 400px;
     max-height: 200px;
+    min-width: 400px;
+    min-height: 200px;
 }
 
 .carrusel > .row {
