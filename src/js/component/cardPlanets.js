@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import imagen from "../../img/rigo-baby.jpg"; // https://bloygo.yoigo.com/guia-planetas-star-wars-luke-skywalker-rey/
+import imagen from "../../img/rigo-baby.jpg";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 
@@ -14,8 +14,6 @@ export const CardPlanets = (props) => {
     }
 
     return (<div className="col-4 card tarjeta">
-                {/* <img src={`../../src/img/fotos/${planeta.uid}.jpg`} className="card-img-top" alt="" /> */}
-                {/* <img src="https://m.media-amazon.com/images/I/81nXcPXv69L.jpg" className="card-img-top" alt="" />  */}
                 <img src={`https://starwars-visualguide.com/assets/img/planets/${planeta.uid}.jpg`} className="card-img-top" alt="" />
                 <div className="card-body">
                     <h5 className="card-title">{planeta.name} - {planeta.uid}</h5>

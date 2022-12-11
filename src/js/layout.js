@@ -5,8 +5,8 @@ import ScrollToTop from "./component/scrollToTop";
 import { Demo } from "./views/demo";
 import injectContext from "./store/appContext";
 
-import { Home } from "./views/home.js";
 import { HomeCharacters } from "./views/homeCharacters";
+import { HomeCharacters2 } from "./views/homeCharacters2";
 import { HomePlanets } from "./views/homePlanets";
 import { Navbar } from "./component/navbar";
 import { DetailPlanet } from "./component/detailPlanet";
@@ -25,18 +25,19 @@ const Layout = () => {
 					<Navbar/>
 					<Switch>
 						{/*<Redirect from="/" to="/1" />
-							Como no se redirigirlo esta es la única chapuza que me ha funcionado!!
-							Repetir la ruta						
+							Como no se redirigirlo esta es la única chapuza que me ha funcionado!! -->  Repetir la ruta						
 						*/}						
 
 						<Route exact path="/">
 							<HomeCharacters />
 							<HomePlanets />
+							<HomeCharacters2 />
 						</Route>	
 						<Route path="/:pagina">
 							{/*<Home/>*/}
 							<HomeCharacters />
 							<HomePlanets />
+							<HomeCharacters2 />
 						</Route>
 						<Route exact path="/singleCharacter/:characterId">
 							<DetailCharacter />
