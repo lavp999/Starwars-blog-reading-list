@@ -11,21 +11,21 @@ export const Navbar = (props) => {
 
 	return (<>
 				<nav className="row justtify-content-between navbar navbar-light bg-light mb-3">
-					<div className="col-auto">
+					<div className="col-md-auto col-sm-4">
 						<Link to="/1">
 							<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Star_Wars_Logo.svg/694px-Star_Wars_Logo.svg.png" className="logo"/>
 						</Link>
 					</div>
-					<div className="col-auto mr-auto dropdown">
-						<ul key="ulNav1" className="nav nav-pills">
+					<div className="col-md-auto col-sm-8 mr-auto dropdown">
+						<ul className="nav nav-pills">
 							<li className="nav-item dropdown active">
 								<a className="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
 									{`Favoritos  (${store.misFav.length}) `}
 								</a>
-								<ul key="ulNav2" className="dropdown-menu favoritos">
+								<ul className="dropdown-menu favoritos">
 									{store.misFav.map((elemento, index)=>{
-											return	(<div key={`div-${elemento.id}${elemento.tipo}`} className="divListaFavoritos">
-														<li key={`li-${elemento.id}${elemento.tipo}`}>
+											return	(<div className="divListaFavoritos">
+														<li >
 															<Link to={`/singleCharacter/${elemento.id}`} key={`link-${elemento.id}${elemento.tipo}`} className={`dropdown-item ${elemento.tipo == "P" ? "colorPlanetas" : "colorCharacters"}`}>
 																{elemento.name}
 															</Link>

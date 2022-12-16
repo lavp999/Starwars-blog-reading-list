@@ -12,10 +12,7 @@ export const CardCharacters = (props) => {
     }
 
     return (<div className="col-4 card tarjeta">
-                {/* <img src={'1.jpg'} className="card-img-top" alt="" />  */}
-                {/* <img key={`img-${personaje.uid}`} src={imagen} className="card-img-top" alt="" />  */}
-                {/* <img src="https://www.commonsensemedia.org/sites/default/files/styles/ratio_16_9_large/public/blog/starwars-darth-hand-blog-569x329.jpg" className="card-img-top" alt="" />  */}
-                <img src={`https://starwars-visualguide.com/assets/img/characters/${personaje.uid}.jpg`} className="card-img-top" alt="" />
+                <img src={`https://starwars-visualguide.com/assets/img/characters/${personaje.uid}.jpg`} className="card-img-top imagenesChar" alt="" />
                 <div className="card-body">
                     <h5 className="card-title">{personaje.name} - {personaje.uid}</h5>
                     <div className="row p-0 justify-content-between">

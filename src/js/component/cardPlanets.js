@@ -14,7 +14,7 @@ export const CardPlanets = (props) => {
     }
 
     return (<div className="col-4 card tarjeta">
-                <img src={`https://starwars-visualguide.com/assets/img/planets/${planeta.uid}.jpg`} className="card-img-top" alt="" />
+                <img src={`https://starwars-visualguide.com/assets/img/planets/${planeta.uid}.jpg`} className="card-img-top imagenesPlat" alt="" />
                 <div className="card-body">
                     <h5 className="card-title">{planeta.name} - {planeta.uid}</h5>
                     <div className="row p-0 justify-content-between">
