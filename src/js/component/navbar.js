@@ -10,13 +10,13 @@ export const Navbar = (props) => {
 	}
 
 	return (<>
-				<nav className="row justtify-content-between navbar navbar-light bg-light mb-3">
-					<div className="col-md-auto col-sm-4">
+				<nav className="row d-flex justify-content-between navbar navbar-light bg-light mb-3 d-flex">
+					<div className="col-auto">
 						<Link to="/1">
 							<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Star_Wars_Logo.svg/694px-Star_Wars_Logo.svg.png" className="logo"/>
 						</Link>
 					</div>
-					<div className="col-md-auto col-sm-8 mr-auto dropdown">
+					<div className="col-auto mr-auto dropdown">
 						<ul className="nav nav-pills">
 							<li className="nav-item dropdown active">
 								<a className="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">

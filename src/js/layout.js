@@ -23,9 +23,10 @@ const Layout = () => {
 			<BrowserRouter basename={basename}>
 				<ScrollToTop>
 					<Navbar/>
-{/*					<Switch>
+					<Switch>
 						{/*<Redirect from="/" to="/1" />
 							Como no se redirigirlo esta es la única chapuza que me ha funcionado!! -->  Repetir la ruta						
+						*/}						
 						
 
 						<Route exact path="/">
@@ -54,7 +55,6 @@ const Layout = () => {
 							<h1>Onde vas!!</h1>
 						</Route>
 					</Switch>
-					*/}						
 				</ScrollToTop>
 			</BrowserRouter>
 		</div>

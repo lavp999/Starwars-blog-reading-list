@@ -24,7 +24,7 @@ export const Planets = (props) => {
                     <h1>Planetas con Parámetros</h1>
                 </div>
 
-                <div className="row text-center">
+                <div className="row justify-content-center">
                         {listaPlanets.map((ele) => {return (<CardPlanets key={ele.uid} planeta={ele}/>)})}
                 </div>
                 <div className="row p-0 justify-content-between">
