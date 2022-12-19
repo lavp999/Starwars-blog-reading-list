@@ -17,7 +17,7 @@ export const Navbar = (props) => {
 						</Link>
 					</div>
 					<div className="col-6 col-lg-auto mr-lg-auto dropdown btn btn-primary">
-						<ul className="nav nav-pills">
+						<ul className="nav nav-pills justify-content-end">
 							<li className="nav-item dropdown active">
 								<a className="nav-link dropdown-toggle textoBoton" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
 									{`Favoritos  (${store.misFav.length}) `}
